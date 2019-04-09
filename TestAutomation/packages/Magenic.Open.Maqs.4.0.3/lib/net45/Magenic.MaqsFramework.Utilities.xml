@@ -1,0 +1,910 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Magenic.MaqsFramework.Utilities</name>
+    </assembly>
+    <members>
+        <member name="T:Magenic.MaqsFramework.Utilities.Helper.Config">
+            <summary>
+            Config class
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.Config.configOverrides">
+            <summary>
+            Thread safe collection of configuration overrides
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.Config.maqsConfig">
+            <summary>
+            Configuration mapping for the custom Magenic Maqs section
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.Config.AddTestSettingValues(System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            Add configuration override values
+            </summary>
+            <param name="configurations">Dictionary of configuration overrides</param>
+            <param name="overrideExisting">If the override already exists should we override it</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.Config.GetValue(System.String)">
+            <summary>
+            Get the configuration value for a specific key
+            </summary>
+            <param name="key">Config file key</param>
+            <returns>The configuration value - Returns the empty string if the key is not found</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/ConfigUnitTests.cs" region="GetValueString" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.Config.GetValue(System.String,System.String)">
+            <summary>
+            Get the configuration value for a specific key
+            </summary>
+            <param name="key">Config file key</param>
+            <param name="defaultValue">Default value - Returned the key cannot be found</param>
+            <returns>The configuration value</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/ConfigUnitTests.cs" region="GetValueWithDefault" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.Config.DoesKeyExist(System.String)">
+            <summary>
+            Does the configuration key exist
+            </summary>
+            <param name="key">Config file key</param>
+            <returns>True if the key exists</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/ConfigUnitTests.cs" region="DoesKeyExist" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.Config.DoesMaqsKeyExist(System.String)">
+            <summary>
+            Does the Maqs configuration key exist
+            </summary>
+            <param name="key">Config file key</param>
+            <returns>True if the key exists</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Helper.TestCategories">
+            <summary>
+             Test category type of web service
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.Email">
+            <summary>
+            String for email unit test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.Database">
+            <summary>
+            String for database unit test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.Selenium">
+            <summary>
+            String for Selenium unit test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.Utilities">
+            <summary>
+            String for utilities unit test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.WebService">
+            <summary>
+            String for web service unit test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.Framework">
+            <summary>
+            String for base framework unit test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.MediaType">
+            <summary>
+            String for media type test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.NUnit">
+            <summary>
+            String for NUnit type test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.MongoDB">
+            <summary>
+            String for MongoDB type test category
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.TestCategories.Appium">
+            <summary>
+            String for Appium type test category
+            </summary>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Helper.GenericWait">
+            <summary>
+            Generic wait class
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.GenericWait.retryTimeFromConfig">
+            <summary>
+            Default retry time for the configuration file
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Helper.GenericWait.timeoutFromConfig">
+            <summary>
+            Default timeout time from the configuration file
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitUntil``1(System.Func{``0,System.Boolean},``0)">
+            <summary>
+            Wait until the wait for true function returns true or times out
+            </summary>
+            <typeparam name="T">The type of the parameter to pass to the wait for true function</typeparam>
+            <param name="waitForTrue">The function we are waiting to return true</param>
+            <param name="arg">Parameter to pass to the wait for true function</param>
+            <returns>True if the waitForTrue function returned true before the timeout</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitUntilWithType" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitUntil(System.Func{System.Boolean})">
+            <summary>
+            Wait until the wait for true function returns true or times out
+            </summary>
+            <param name="waitForTrue">The function we are waiting to return true</param>
+            <returns>True if the wait for true function returned true before timing out</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitUntil" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitFor(System.Func{System.Boolean})">
+            <summary>
+            Wait until the wait for true function returns true, an exception will be thrown if the wait times out
+            </summary>
+            <param name="waitForTrue">The function we are waiting to return true</param>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitFor" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitFor``1(System.Func{``0,System.Boolean},``0)">
+            <summary>
+            Wait until the wait for true function returns true, an exception will be thrown if the wait times out
+            </summary>
+            <typeparam name="T">The type of parameter to pass in the the wait for true function</typeparam>
+            <param name="waitForTrue">The function we are waiting to return true</param>
+            <param name="arg">Parameter to pass to the wait for true function</param>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitForWithType" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitUntilMatch``1(System.Func{``0},``0)">
+            <summary>
+            Waits for a function with a return type T to return a value that is to an argument of the same type.  If it times out it returns the value of the function.
+            </summary>
+            <typeparam name="T">Type returned</typeparam>
+            <param name="waitForTrue">Function that returns type T</param>
+            <param name="comparativeValue">value of the same type as T</param>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitUntilFunctionEqualsExpected" lang="C#" />
+            </example>
+            <returns>if it returned before the timeout occurred</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitUntilMatch``1(System.Func{``0},System.TimeSpan,System.TimeSpan,``0)">
+            <summary>
+            Waits for a function with a return type T to return a value that is to an argument of the same type.  If it times out it returns the value of the function.
+            </summary>
+            <typeparam name="T">Type returned</typeparam>
+            <param name="waitForTrue">Function that returns type T</param>
+            <param name="retryTime">time to wait between retries</param>
+            <param name="timeout">how long before timing out</param>
+            <param name="comparativeValue">value of the same type as T</param>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitUntilFunctionEqualsExpected" lang="C#" />
+            </example>
+            <returns>if it returned before the timeout occurred</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitForMatch``1(System.Func{``0},``0)">
+            <summary>
+            Waits for a Function with a type T to return a value that is equal to a comparative value of type T
+            </summary>
+            <typeparam name="T">The type the method returns</typeparam>
+            <param name="waitForTrue">Method to wait for</param>
+            <param name="comparativeValue">The value to compare to what comes out of waitForTrue</param>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitForFunctionEqualsExpected" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitForMatch``1(System.Func{``0},System.TimeSpan,System.TimeSpan,``0)">
+            <summary>
+            Waits for a Function with a type T to return a value that is equal to a comparative value of type T
+            </summary>
+            <typeparam name="T">The type the method returns</typeparam>
+            <param name="waitForTrue">Method to wait for</param>
+            <param name="retryTime">time to wait between retries</param>
+            <param name="timeout">how long before timing out</param>
+            <param name="comparativeValue">The value to compare to what comes out of waitForTrue</param>
+            <example>
+            <code source = "../UtilitiesUnitTests/GenericWaitTests.cs" region="WaitForFunctionEqualsExpected" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitFor``1(System.Func{``0})">
+            <summary>
+            Wait until the wait for function returns the expected type, an exception will be thrown if the wait times out
+            </summary>
+            <typeparam name="T">The expected return type</typeparam>
+            <param name="waitFor">The wait for function</param>
+            <returns>The wait for function return value</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.WaitFor``2(System.Func{``1,``0},``1)">
+            <summary>
+            Wait until the wait for function returns the expected type, an exception will be thrown if the wait times out
+            </summary>
+            <typeparam name="T">The expected return type</typeparam>
+            <typeparam name="U">Wait for argument type</typeparam>
+            <param name="waitFor">The wait for function</param>
+            <param name="arg">The wait for function argument</param>
+            <returns>The wait for function return value</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.Wait``1(System.Func{``0,System.Boolean},System.TimeSpan,System.TimeSpan,System.Boolean,``0)">
+            <summary>
+            Wait until the wait for true function returns true or times out
+            </summary>
+            <typeparam name="T">The type of the parameter to pass to the wait for true function</typeparam>
+            <param name="waitForTrue">The function we are waiting to return true</param>
+            <param name="retryTime">How long do we wait before retrying the wait for true function</param>
+            <param name="timeout">Max timeout for the check</param>
+            <param name="throwException">If the last check failed because of an exception should we throw the exception</param>
+            <param name="arg">Parameter to pass to the wait for true function</param>
+            <returns>True if the wait for true function returned true before timing out</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.Wait(System.Func{System.Boolean},System.TimeSpan,System.TimeSpan,System.Boolean)">
+            <summary>
+            Wait until the wait for true function returns true or times out
+            </summary>
+            <param name="waitForTrue">The function we are waiting to return true</param>
+            <param name="retryTime">How long do we wait before retrying the wait for true function</param>
+            <param name="timeout">Max timeout for the check</param>
+            <param name="throwException">If the last check failed because of an exception should we throw the exception</param>
+            <returns>True if the wait for true function returned true before timing out</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.Wait``1(System.Func{``0},System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Wait until the wait for function returns the expected type, an exception will be thrown if the wait times out
+            </summary>
+            <typeparam name="T">The expected return type</typeparam>
+            <param name="waitFor">The wait for function</param>
+            <param name="retryTime">How long do we wait before retrying the wait for true function</param>
+            <param name="timeout">Max timeout for the check</param>
+            <returns>Return value of the wait for function</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.Wait``2(System.Func{``1,``0},System.TimeSpan,System.TimeSpan,``1)">
+            <summary>
+            Wait until the wait for function returns the expected type, an exception will be thrown if the wait times out
+            </summary>
+            <typeparam name="T">The expected return type</typeparam>
+            <typeparam name="U">Wait for argument type</typeparam>
+            <param name="waitFor">The wait for function</param>
+            <param name="retryTime">How long do we wait before retrying the wait for true function</param>
+            <param name="timeout">Max timeout for the check</param>
+            <param name="arg">Arguments to pass into the wait for function</param>
+            <returns>Return value of the wait for function</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Helper.GenericWait.ParamsEqual(System.Object[])">
+            <summary>
+            Checks that the objects all match
+            </summary>
+            <param name="param">objects passed in</param>
+            <returns>parameters are all equal as a boolean</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger">
+            <summary>
+            Helper class for logging to the console
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.#ctor(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger" /> class.
+            </summary>
+            <param name="level">The logging level</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.LogMessage(System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as a generic message
+            </summary>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.LogMessage(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as the specified type
+            </summary>
+            <param name="messageType">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.Write(System.String,System.Object[])">
+            <summary>
+            Write the formatted message to the console as a generic message
+            </summary>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write the formatted message followed by a line break to the console as a generic message
+            </summary>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.Write(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Write the formatted message to the console as the given message type
+            </summary>
+            <param name="type">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">Message string format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.WriteLine(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Write the formatted message followed by a line break to the console as the given message type
+            </summary>
+            <param name="type">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">Message string format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.SetConsoleColor(System.ConsoleColor,System.ConsoleColor)">
+            <summary>
+            Set the console colors
+            </summary>
+            <param name="fore">The foreground color</param>
+            <param name="back">The background color</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.SetColorWriteAndRestore(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.Boolean,System.String,System.Object[])">
+            <summary>
+            Change the console color to match the message type, write the message and restore the previous console colors
+            </summary>
+            <param name="type">The type of message</param>
+            <param name="line">Is this a write-line command, else it is just a write</param>
+            <param name="message">The log message</param>
+            <param name="args">Message string format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.ConsoleLogger.SetConsoleColor(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Set the console color based on the message type
+            </summary>
+            <param name="type">The type of message that will be written</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger">
+            <summary>
+            Helper class for adding logs to an HTML file. Allows configurable file path.
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.DEFAULTLOGNAME">
+            <summary>
+            The default log name
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.DEFAULTHTMLHEADER">
+            <summary>
+            Default header for the HTML file, this gives us our colored text
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.#ctor(System.String,System.String,Magenic.MaqsFramework.Utilities.Logging.MessageType,System.Boolean)">
+            <summary>
+            Initializes a new instance of the HtmlFileLogger class
+            </summary>
+            <param name="logFolder">Where log files should be saved</param>
+            <param name="name">File Name</param>
+            <param name="messageLevel">Messaging level</param>
+            <param name="append">True to append to an existing log file or false to overwrite it - If the file does not exist this, flag will have no affect</param>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.Extension">
+            <summary>
+            Gets the file extension
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.Dispose">
+            <summary>
+            Dispose the class
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.LogMessage(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as a generic message
+            </summary>
+            <param name="messageType">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.HtmlFileLogger.GetTextWithColorFlag(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Get the HTML style key for the given message type
+            </summary>
+            <param name="type">The message type</param>
+            <returns>string - The HTML style key for the given message type</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.LoggingConfig">
+            <summary>
+            Logging related configuration
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.LoggingConfig.GetLoggingEnabledSetting">
+            <summary>
+            Get our logging state - Yes, no or on failure
+            </summary>
+            <returns>The log enabled state</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.LoggingConfig.GetLoggingLevelSetting">
+            <summary>
+            Get our logging level
+            </summary>
+            <returns>MessageType - The current log level</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.LoggingConfig.GetLogger(System.String)">
+            <summary>
+            Get the logger
+            </summary>
+            <param name="fileName">File name to use for the log</param>
+            <returns>The logger</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.LoggingConfig.GetLogDirectory">
+            <summary>
+            Gets the File Directory to store log files
+            </summary>
+            <returns>String of file path</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.TestResultType">
+            <summary>
+            The type of result
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.TestResultType.PASS">
+            <summary>
+            The test passed
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.TestResultType.FAIL">
+            <summary>
+            The test failed
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.TestResultType.INCONCLUSIVE">
+            <summary>
+            The test was inconclusive
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.TestResultType.SKIP">
+            <summary>
+            The test was skipped
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.TestResultType.OTHER">
+            <summary>
+            The test had an unexpected result
+            </summary>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.LoggingEnabled">
+            <summary>
+            The type of message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.LoggingEnabled.YES">
+            <summary>
+            Yes log
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.LoggingEnabled.ONFAIL">
+            <summary>
+            Only save a log when there is a failure
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.LoggingEnabled.NO">
+            <summary>
+            No, don't log
+            </summary>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.FileLogger">
+            <summary>
+             Helper class for adding logs to a plain text file. Allows configurable file path.
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.FileLogger.DEFAULTLOGFOLDER">
+            <summary>
+            The default log file save location
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.FileLogger.DEFAULTLOGNAME">
+            <summary>
+             Initializes a new instance of the FileLogger class
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.FileLogger.filePath">
+            <summary>
+            Create a private string for the path of the file
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.FileLogger.directory">
+            <summary>
+            Creates a private string for the directory of the folder
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.FileLogger.#ctor(System.String,System.String,Magenic.MaqsFramework.Utilities.Logging.MessageType,System.Boolean)">
+            <summary>
+             Initializes a new instance of the FileLogger class
+            </summary>
+            <param name="logFolder">Where log files should be saved</param>
+            <param name="name">File Name</param>
+            <param name="messageLevel">Messaging level</param>
+            <param name="append">True to append to an existing log file or false to overwrite it - If the file does not exist this, flag will have no affect</param>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Logging.FileLogger.FilePath">
+            <summary>
+            Gets or sets the FilePath value
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Logging.FileLogger.Extension">
+            <summary>
+            Gets the file extension
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.FileLogger.LogMessage(System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as the specified type
+            </summary>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.FileLogger.LogMessage(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as a generic message
+            </summary>
+            <param name="messageType">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.FileLogger.MakeValidFileName(System.String)">
+            <summary>
+            Take a name sting and make it a valid file name
+            </summary>
+            <param name="name">The string to cleanup</param>
+            <returns>The string as a valid file name</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.Logger">
+            <summary>
+            Abstract logging interface base class
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.Logger.DEFAULTDATEFORMAT">
+            <summary>
+            Default date format
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.Logger.logLevel">
+            <summary>
+            Log Level value area
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.Logger.logLevelSaved">
+            <summary>
+            Log Level value save area
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.#ctor(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.Utilities.Logging.Logger" /> class.
+            </summary>
+            <param name="level">The logging level</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.SetLoggingLevel(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Set the logging level
+            </summary>
+            <param name="level">The logging level</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.SuspendLogging">
+            <summary>
+            Suspends logging
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.ContinueLogging">
+            <summary>
+            Continue logging after it was suspended
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.LogMessage(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as a generic message
+            </summary>
+            <param name="messageType">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.LogMessage(System.String,System.Object[])">
+            <summary>
+            Write the formatted message (one line) to the console as the specified type
+            </summary>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.ShouldMessageBeLogged(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Determine if the message should be logged
+            The message should be logged if it's level is greater than or equal to the current logging level
+            </summary>
+            <param name="messageType">The type of message being logged</param>
+            <returns>True if the message should be logged</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Logging.Logger.UnknownMessageTypeMessage(Magenic.MaqsFramework.Utilities.Logging.MessageType)">
+            <summary>
+            Get the message for an unknown message type
+            </summary>
+            <param name="type">The message type</param>
+            <returns>The unknown message type message</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Logging.MessageType">
+            <summary>
+            The type of message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.SUSPENDED">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.ERROR">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.WARNING">
+            <summary>
+            Warning message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.SUCCESS">
+            <summary>
+            Success message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.GENERIC">
+            <summary>
+            Generic message
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.INFORMATION">
+            <summary>
+            Informational message - Our default message type
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Logging.MessageType.VERBOSE">
+            <summary>
+            Verbose message
+            </summary>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Data.FakerData">
+            <summary>
+            Generates Unique Faker Data for testing
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Data.FakerData.random">
+            <summary>
+            Random variable to use throughout
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.FakerData.GenerateInstantSpecificTime">
+            <summary>
+            Returns the current time in the MM/DD/YYYY HH:MM:SSSS format
+            </summary>
+            <returns>current time string</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.FakerData.GenerateUniqueId(System.Boolean)">
+            <summary>
+            Returns a unique ID as a string
+            </summary>
+            <param name="formatted">If formatted or not</param>
+            <returns>ID string</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.FakerData.GenerateUSPhoneNumber(System.Boolean)">
+            <summary>
+            Returns a random phoneNumber - formatted or unformatted 
+            </summary>
+            <param name="formatted">Unformatted by default</param>
+            <returns>Phone number as string</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.FakerData.GenerateSocialSecurityNumber(System.Boolean)">
+            <summary>
+            Returns a random prefix for a name
+            </summary>
+            <param name="withDashes">without dashes by default</param>
+            <returns>Social Security string</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.FakerData.GeneralRandomizer``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Takes in a list and returns a random Value
+            </summary>
+            <typeparam name="T">Any type of List</typeparam>
+            <param name="stringList">Generic string list of any type</param>
+            <returns>Random value from the list</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Data.ListProcessor">
+            <summary>
+            Contains methods for processing lists
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.ListProcessor.CreateCommaDelimitedString(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Create a comma delimited string from a list of strings
+            </summary>
+            <param name="stringList">List of strings</param>
+            <param name="sort">True to create an alphabetically sorted comma delimited string</param>
+            <returns>Returns a comma delimited string</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/ListProcessorUnitTests.cs" region="CommaDelimited" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.ListProcessor.ListOfStringsComparer(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Compares two lists to see if they contain the same values
+            </summary>
+            <param name="expectedList">First list of strings to compare</param>
+            <param name="actualList">Second list of strings to compare</param>
+            <param name="results">StringBuilder to hold failed results</param>
+            <param name="verifyOrder">If True, verify the two lists have values in the same order</param>
+            <returns>True if the lists are the same</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/ListProcessorUnitTests.cs" region="ListProcessorCompare" lang="C#" />
+            </example>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Data.StringProcessor">
+            <summary>
+            Initializes a new instance of the StringProcessor class
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Data.StringProcessor.SafeFormatter(System.String,System.Object[])">
+            <summary>
+            Creates a string based on the arguments
+            If no args are applied, then we want to just return the message
+            </summary>
+            <param name="message">The message being used</param>
+            <param name="args">The arguments being used</param>
+            <returns>A final string</returns>
+            <example>
+            <code source = "../UtilitiesUnitTests/StringProcessorUnitTests.cs" region="StringFormattor" lang="C#" />
+            </example>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimer">
+            <summary>
+            Response timer class - holds a single response timer
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimer.TimerContext">
+            <summary>
+            Gets or sets the name of the Page associated with the Timer
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimer.TimerName">
+            <summary>
+            Gets or sets the Timer Name
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimer.StartTime">
+            <summary>
+            Gets or sets the start time
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimer.EndTime">
+            <summary>
+            Gets or sets the end time
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimer.Duration">
+            <summary>
+            Gets or sets the duration
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimer.DurationTicks">
+            <summary>
+            Gets or sets the Serializable duration
+            </summary>
+        </member>
+        <member name="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection">
+            <summary>
+            Response timer collection class -  Object to be owned by Test Class (Object), and passed to page Constructors to insert Performance Timers 
+            /// </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.writerLocker">
+            <summary>
+            Locker object so the Performance Timer Document save doesn't save at the same time
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.timerList">
+            <summary>
+            List object to store CompletedTimers 
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.openTimerList">
+            <summary>
+            List object to store Timers 
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.perfPayloadString">
+            <summary>
+            String containing a generic Payload to be included in the <see cref="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection"/> output (serialized to XML) 
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.#ctor(Magenic.MaqsFramework.Utilities.Logging.Logger,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection"/> class
+            </summary>
+            <param name="logger">Logger to use</param>
+            <param name="fullyQualifiedTestName">Test name</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection"/> class
+            </summary>
+            <param name="fullyQualifiedTestName">Test name</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection"/> class
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.Timerlist">
+            <summary>
+            Gets and sets the list if response time tests
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.FileName">
+            <summary>
+            Gets or sets the File name
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.TestName">
+            <summary>
+            Gets or sets the test name
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.PerfPayloadString">
+            <summary>
+            Gets or sets the generic payload string
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.Log">
+            <summary>
+            Gets the logger
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.StartTimer(System.String)">
+            <summary>
+            Method to start a timer with a specified name
+            </summary>
+            <param name="timerName">Name of the timer</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.StartTimer(System.String,System.String)">
+            <summary>
+            Method to start a timer with a specified name and for a specific context
+            </summary>
+            <param name="contextName">Name of the context</param>
+            <param name="timerName">Name of the timer</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.EndTimer(System.String)">
+            <summary>
+            Method to stop an existing timer with a specified name for a test
+            </summary>
+            <param name="timerName">Name of the timer</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.Write(Magenic.MaqsFramework.Utilities.Logging.Logger)">
+            <summary>
+            Method to Write the Performance Timer Collection to disk
+            </summary>
+            <param name="log">The current test Logger</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection.LoadPerfTimerCollection(System.String)">
+            <summary>
+            Method to Read in the Performance Timer Collection from disk
+            </summary>
+            <param name="filepath">The file from which to initialize</param>
+            <returns> <see cref="T:Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection"/> initialized from file path</returns>
+        </member>
+    </members>
+</doc>

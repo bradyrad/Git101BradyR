@@ -1,0 +1,1616 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Magenic.MaqsFramework.BaseSeleniumTest</name>
+    </assembly>
+    <members>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest">
+            <summary>
+            Generic base Selenium test class
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest"/> class.
+            Setup the web driver for each test class
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver">
+            <summary>
+            Gets or sets the WebDriver
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.Dispose">
+            <summary>
+            Dispose the class
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.Dispose(System.Boolean)">
+            <summary>
+            Dispose of the webdriver if it hasn't already been
+            </summary>
+            <param name="disposing">Are we disposing</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.GetBrowser">
+            <summary>
+            The default get web driver function
+            </summary>
+            <returns>The web driver</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.GetSoftAssert">
+            <summary>
+            Method to get a new soft assert object
+            </summary>
+            <returns>A soft assert object</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.PostSetupLogging">
+            <summary>
+            Log info about the web driver setup
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.SetupEventFiringTester">
+            <summary>
+            Setup the event firing web driver
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.SetupNoneEventFiringTester">
+            <summary>
+            Setup the normal web driver - the none event firing implementation
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.BeforeLoggingTeardown(Magenic.MaqsFramework.Utilities.Logging.TestResultType)">
+            <summary>
+            Take a screen shot if needed and tear down the web driver
+            </summary>
+            <param name="resultType">The test result</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.CreateNewTestObject">
+            <summary>
+            Create a Selenium test object
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.MapEvents(OpenQA.Selenium.Support.Events.EventFiringWebDriver)">
+            <summary>
+            Map selenium events to log events
+            </summary>
+            <param name="eventFiringDriver">The event firing web driver that we want mapped</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_NavigatingForward(System.Object,OpenQA.Selenium.Support.Events.WebDriverNavigationEventArgs)">
+            <summary>
+            Event for webdriver that is navigating forward
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_NavigatingBack(System.Object,OpenQA.Selenium.Support.Events.WebDriverNavigationEventArgs)">
+            <summary>
+            Event for webdriver that is navigating back
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_NavigatedForward(System.Object,OpenQA.Selenium.Support.Events.WebDriverNavigationEventArgs)">
+            <summary>
+            Event for webdriver that has navigated forward
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_NavigatedBack(System.Object,OpenQA.Selenium.Support.Events.WebDriverNavigationEventArgs)">
+            <summary>
+            Event for webdriver that is navigated back
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_Navigating(System.Object,OpenQA.Selenium.Support.Events.WebDriverNavigationEventArgs)">
+            <summary>
+            Event for webdriver that is navigating
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ScriptExecuting(System.Object,OpenQA.Selenium.Support.Events.WebDriverScriptEventArgs)">
+            <summary>
+            Event for webdriver that is script executing
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_FindingElement(System.Object,OpenQA.Selenium.Support.Events.FindElementEventArgs)">
+            <summary>
+            Event for webdriver that is finding an element
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ElementValueChanging(System.Object,OpenQA.Selenium.Support.Events.WebElementEventArgs)">
+            <summary>
+            Event for webdriver that is changing an element value
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ElementClicking(System.Object,OpenQA.Selenium.Support.Events.WebElementEventArgs)">
+            <summary>
+            Event for webdriver that is clicking an element
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ExceptionThrown(System.Object,OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs)">
+            <summary>
+            Event for webdriver when an exception is thrown
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_Navigated(System.Object,OpenQA.Selenium.Support.Events.WebDriverNavigationEventArgs)">
+            <summary>
+            Event for webdriver that has navigated
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ScriptExecuted(System.Object,OpenQA.Selenium.Support.Events.WebDriverScriptEventArgs)">
+            <summary>
+            Event for webdriver has executed a script
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_FindElementCompleted(System.Object,OpenQA.Selenium.Support.Events.FindElementEventArgs)">
+            <summary>
+            Event for webdriver that is finished finding an element
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ElementValueChanged(System.Object,OpenQA.Selenium.Support.Events.WebElementEventArgs)">
+            <summary>
+            Event for webdriver that has changed an element value
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.BaseSeleniumTest.WebDriver_ElementClicked(System.Object,OpenQA.Selenium.Support.Events.WebElementEventArgs)">
+            <summary>
+            Event for webdriver that has clicked an element
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event object</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.ActionBuilder">
+            <summary>
+            Contains methods for interactions using selenium Actions class
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ActionBuilder.HoverOver(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
+            <summary>
+            Performs a hover over on an element
+            </summary>
+            <param name="webDriver">The IWebDriver</param>
+            <param name="by">By selector for the element</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ActionBuilderUnitTests.cs" region="HoverOver" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ActionBuilder.PressModifierKey(OpenQA.Selenium.IWebDriver,System.String)">
+            <summary>
+            Press non alphanumeric key. Ex. Control, Home, etc.
+            </summary>
+            <param name="webDriver">The IWebDriver</param>
+            <param name="key">The key to press. NOTE: Use the Keys class</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ActionBuilderUnitTests.cs" region="PressModifier" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ActionBuilder.SlideElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.Int32)">
+            <summary>
+            Slider method which will take an offset of X pixels
+            </summary>
+            <param name="webDriver">The IWebDriver</param>
+            <param name="element">Element to be used</param>
+            <param name="pixelsOffset">Integer of pixels to be moved (Positive or negative)</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ActionBuilderUnitTests.cs" region="SlideElement" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ActionBuilder.RightClick(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
+            <summary>
+            Performs a right-click on an element
+            Known Issue: This does not currently work for PhantomJS due to known issue with Right-Click. Issue may be resolved in future versions of PhantomJS.
+            URL for Issue: <c>https://github.com/ariya/phantomjs/issues/11429</c>
+            </summary>
+            <param name="webDriver">The IWebDriver</param>
+            <param name="by">By selector for the element</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ActionBuilderUnitTests.cs" region="RightClick" lang="C#" />
+            </example>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend">
+            <summary>
+            Web driver and element extensions
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.waitCollection">
+            <summary>
+            Selenium Web Driver
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend" /> class
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.Wait(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Return the wait extension
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <returns>The wait extension</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.Find(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Return the find extension
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <returns>The find extension</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.GetWaitDriver(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Get the WebDriverWait
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <returns>The WebDriverWait</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="GetWaitDriver" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.SetWaitDriver(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.Support.UI.WebDriverWait)">
+            <summary>
+            Sets the WebDriverWait
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="waiter">The WebDriverWait</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="SetWaitDriver" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.ResetWaitDriver(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Reset the WebDriverWait to the default
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="ResetWaitDriver" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.RemoveWaitDriver(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Remove the stored wait driver
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <returns>True if the wait driver was removed</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="RemoveWaitDriver" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Extend.GetLowLevelDriver(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Get the low level, none event firing, web driver
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <returns>the underlying web driver</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement">
+            <summary>
+            Wrapper for dynamically finding and interacting with elements
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.userFriendlyName">
+            <summary>
+            A user friendly name, for logging purposes
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.parent">
+            <summary>
+            The parent fluent element
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.#ctor(Magenic.MaqsFramework.BaseSeleniumTest.SeleniumTestObject,OpenQA.Selenium.By,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement" /> class
+            </summary>
+            <param name="testObject">The base Selenium test object</param>
+            <param name="locator">The 'by' selector for the element</param>
+            <param name="userFriendlyName">A user friendly name, for logging purposes</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementCreate" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.#ctor(Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement,OpenQA.Selenium.By,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement" /> class
+            </summary>
+            <param name="parent">The parent fluent element</param>
+            <param name="locator">The 'by' selector for the element</param>
+            <param name="userFriendlyName">A user friendly name, for logging purposes</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementCreateWithParent" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.By">
+            <summary>
+            Gets a the 'by' selector for the element
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementGetBy" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.TestObject">
+            <summary>
+            Gets the test object for the element
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementGetTestObject" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.CachedElement">
+            <summary>
+            Gets a cached copy of the element or null if we haven't already found the element
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentCaching" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Enabled">
+            <summary>
+            Gets a value indicating whether the fluent element is enabled
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementEnabled" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Selected">
+            <summary>
+            Gets a value indicating whether the fluent element is selected
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementSelected" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Displayed">
+            <summary>
+            Gets a value indicating whether the fluent element is displayed
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementDisplayed" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.TagName">
+            <summary>
+            Gets the fluent element's tag name
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementTagName" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Text">
+            <summary>
+            Gets the fluent element's text
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementText" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Location">
+            <summary>
+            Gets the fluent element's location
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementLocation" lang="C#" />
+            </example>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Size">
+            <summary>
+            Gets the fluent element's size
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementSize" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Click">
+            <summary>
+            Click the fluent element 
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementClick" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.SendKeys(System.String)">
+            <summary>
+            Send keys to the fluent element
+            </summary>
+            <param name="keys">The keys to send to the fluent element</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementSendKeys" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.SendSecretKeys(System.String)">
+            <summary>
+            Send Secret keys with no logging
+            </summary>
+            <param name="keys">The keys to send</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementSendSecretKeys" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Clear">
+            <summary>
+            Clear the fluent element 
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementClear" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.Submit">
+            <summary>
+            Submit the fluent element 
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementSubmit" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetAttribute(System.String)">
+            <summary>
+            Gets the value for the given attribute
+            </summary>
+            <param name="attributeName">The given attribute name</param>
+            <returns>The attribute value</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementGetAttribute" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetValue">
+            <summary>
+            Gets the current value of an element - Useful for get input box text
+            </summary>
+            <returns>The element's current value</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementSendKeys" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetCssValue(System.String)">
+            <summary>
+            Gets the CSS value for the given attribute
+            </summary>
+            <param name="attributeName">The given attribute name</param>
+            <returns>The CSS value</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementGetCssValue" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetTheVisibleElement">
+            <summary>
+            Wait for and get the visible web element
+            </summary>
+            <returns>The web visible web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementVisibleElement" lang="C#" />
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentGetVisibleTriggerFind" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetTheClickableElement">
+            <summary>
+            Wait for and get the clickable web element
+            </summary>
+            <returns>The web clickable web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementClickableElement" lang="C#" />
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentGetClickableTriggerFind" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetTheExistingElement">
+            <summary>
+            Wait for and get the web element
+            </summary>
+            <returns>The web web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentElementExistingElement" lang="C#" />
+            <code source = "../SeleniumUnitTesting/FluentElementUnitTests.cs" region="FluentGetExistTriggerFind" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.GetElement(System.Func{OpenQA.Selenium.IWebElement})">
+            <summary>
+            Get a web element
+            </summary>
+            <param name="getElement">The get web element function</param>
+            <returns>The web element</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.FluentElement.ExecuteEvent(System.Action,System.String)">
+            <summary>
+            Execute an element action
+            </summary>
+            <param name="elementAction">The element action</param>
+            <param name="caller">Name of the action, for logging purposes</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find">
+            <summary>
+            General Element functions for finding and returning Web Elements
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.searchItem">
+            <summary>
+            The search context item
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.#ctor(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find"/> class.
+            </summary>
+            <param name="searchItem">The search context item</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.Element(OpenQA.Selenium.By,System.Boolean)">
+            <summary>
+            General Find Element
+            </summary>
+            <param name="by">Css Selector </param>
+            <param name="assert">optional assert parameter - throws an assert exception if no element is found</param>
+            <returns>Returns A Web Element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="FindElement" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.ElementWithText(OpenQA.Selenium.By,System.String,System.Boolean)">
+            <summary>
+            Find a specified Web Element by text
+            </summary>
+            <param name="by">Css Selector</param>
+            <param name="text">Text to search the Web Element Collection</param>
+            <param name="assert">optional assert parameter</param>
+            <returns>Returns a Web Element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="FindElementWithText" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.IndexOfElementWithText(OpenQA.Selenium.By,System.String,System.Boolean)">
+            <summary>
+            Finds the index of the specified Web Element
+            </summary>
+            <param name="by">Css Selector</param>
+            <param name="text">Text to search the Web Element Collection</param>
+            <param name="assert">optional assert parameter</param>
+            <returns>Returns the index of a Web Element Collection</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="FindIndexFromText" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.IndexOfElementWithText(System.Collections.Generic.ICollection{OpenQA.Selenium.IWebElement},System.String,System.Boolean)">
+            <summary>
+            Find the Index of the Specified Web Element Collection
+            </summary>
+            <param name="list">ICollection of Web Elements</param>
+            <param name="text">Text to search the Web Element Collection</param>
+            <param name="assert">optional assert parameter</param>
+            <returns>Returns the index of the Web Element in the inputted Web Element Collection </returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="FindIndexWithText" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Find.ElemList(OpenQA.Selenium.By,System.Boolean)">
+            <summary>
+            Function to get the Web Collection 
+            </summary>
+            <param name="by">Css Selector</param>
+            <param name="assert">optional assert parameter</param>
+            <returns> Returns a Web Element Collection</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait">
+            <summary>
+            Web driver wait extension methods
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.searchItem">
+            <summary>
+            The search context item
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.webDriverWait">
+            <summary>
+            The wait driver
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.#ctor(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.Support.UI.WebDriverWait)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait"/> class.
+            </summary>
+            <param name="searchItem">The search context item</param>
+            <param name="webDriverWait">The wait driver</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForClickableElement(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to be clickable
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>The web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForClickable" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForClickable" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForVisibleElement(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to be visible
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>The web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForVisible" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForVisible" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForElementExist(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to exist
+            </summary>
+            <param name="by">Css Selector</param>
+            <returns>The web element</returns>
+            /// <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForExist" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForExist" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForExactText(OpenQA.Selenium.By,System.String)">
+            <summary>
+            Wait for the element to have specific (case sensitive) text
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The exact text we expect the element have - Case sensitive</param>
+            <returns>The web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForExactText" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForExactText" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForContainsText(OpenQA.Selenium.By,System.String)">
+            <summary>
+            Wait for the element to contain the expected (case insensitive) text
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The text we expect the element to contain - Case insensitive</param>
+            <returns>The web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForContainsText" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForContainsText" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForAbsentElement(OpenQA.Selenium.By)">
+            <summary>
+            Wait for an element to not appear on the page - It can be gone or just not displayed
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForAbsentElement" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForAbsentElement" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForPageLoad">
+            <summary>
+            Wait for the page to load
+            </summary>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForPageLoad" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForAttributeTextContains(OpenQA.Selenium.By,System.String,System.String)">
+            <summary>
+            Wait for the element attributes to contain the correct text value
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="textValue">Text String expected within value of attribute</param>
+            <param name="attribute">Attribute name as a String</param>
+            <returns>Element if the attribute contained given string</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForAttributeContains" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForAttributeContains" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForAttributeTextEquals(OpenQA.Selenium.By,System.String,System.String)">
+            <summary>
+            Wait for the element attributes to equal the correct text value
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="textValue">Text String expected to equal value of attribute</param>
+            <param name="attribute">Attribute name as a String</param>
+            <returns>Element if the attribute equals given string</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForAttributeEquals" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForAttributeEquals" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForClickableElementAndScrollIntoView(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to be visible and scrolls into view
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>The web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForAndScroll" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForAndScroll" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ForClickableElementAndScrollIntoView(OpenQA.Selenium.By,System.Int32,System.Int32)">
+            <summary>
+            Wait for the element to be visible and scrolls into view
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="x">Horizontal offset</param>
+            <param name="y">Vertical offset</param>
+            <returns>The web element</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitForClickableAndScroll" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitForClickableAndScroll" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilClickableElement(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to be clickable
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>True if the element is clickable</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilClickable" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilClickable" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilVisibleElement(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to be visible
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>True if the element is visible</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilVisible" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilVisible" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilElementExist(OpenQA.Selenium.By)">
+            <summary>
+            Wait for the element to exist
+            </summary>
+            <param name="by">Css Selector</param>
+            <returns>True if the element exists</returns>
+            /// <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilExist" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilExist" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilExactText(OpenQA.Selenium.By,System.String)">
+            <summary>
+            Wait for the element to have specific (case sensitive) text
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The exact text we expect the element have - Case sensitive</param>
+            <returns>True if the element has the exact text</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilExact" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilExact" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilContainsText(OpenQA.Selenium.By,System.String)">
+            <summary>
+            Wait for the element to contain the expected (case insensitive) text
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The text we expect the element to contain - Case insensitive</param>
+            <returns>True if the element contains the text</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilContains" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilContains" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilAbsentElement(OpenQA.Selenium.By)">
+            <summary>
+            Wait for an element to not appear on the page - It can be gone or just not displayed
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>True if the element is not visible on the page</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilAbsent" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilAbsent" lang="C#" />
+            
+            SeleniumUnitTests
+            
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilPageLoad">
+            <summary>
+            Wait for the page to load
+            </summary>
+            <returns>True if the page finished loading</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilPageLoad" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilAttributeTextContains(OpenQA.Selenium.By,System.String,System.String)">
+            <summary>
+            Do a wait for on an attributes text contains
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">Text String expected within value of attribute</param>
+            <param name="attribute">Attribute name as a String</param>
+            <returns>Boolean of whether attribute contained given string</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilAttributeContains" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilAttributeContains" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilAttributeTextEquals(OpenQA.Selenium.By,System.String,System.String)">
+            <summary>
+            Do a wait for on an attributes text equals
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">Text String expected to equal value of attribute</param>
+            <param name="attribute">Attribute name as a String</param>
+            <returns>Boolean of whether check passed</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilAttributeEquals" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilAttributeEquals" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilClickableElementAndScrollIntoView(OpenQA.Selenium.By)">
+            <summary>
+            Waits for the element to be visible and scrolls into view
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <returns>True if the element is visible and scrolled into view</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilClickableAndScroll" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilClickableAndScroll" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.UntilClickableElementAndScrollIntoView(OpenQA.Selenium.By,System.Int32,System.Int32)">
+            <summary>
+            Waits for the element to be visible and scrolls into view
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="x">Horizontal offset</param>
+            <param name="y">Vertical offset</param>
+            <returns>True if the element is visible and scrolled into view</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="WaitUntilClickableAndScrollWithOffset" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="WaitUntilClickableAndScrollWithOffset" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.PageLoadThanExecuteScrolling(System.Int32,System.Int32)">
+            <summary>
+            Wait for the page load and scroll by an offset of x and y
+            </summary>
+            <param name="x">Horizontal offset</param>
+            <param name="y">Vertical offset</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="ExecuteScrolling" lang="C#" />
+            <code source = "../SeleniumUnitTesting/SeleniumWebElementTest.cs" region="ExecuteScrolling" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForAttributeTextContains(OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element attributes to contain the correct text value
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">Text String expected within value of attribute</param>
+            <param name="attribute">Attribute name as a String</param>
+            <param name="element">When this method returns, IWebElement containing the element if the attribute text contains the string, else null</param>
+            <returns>Boolean of whether attribute contained given string</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForAttributeTextContains" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForAttributeTextEquals(OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element attributes to contain the correct text value
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">Text String expected within value of attribute</param>
+            <param name="attribute">Attribute name as a String</param>
+            <param name="element">When this method returns, IWebElement containing the element if the attribute text matches, else null</param>
+            <returns>Boolean of whether attribute contained given string</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForAttributeTextEquals" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForClickableElement(OpenQA.Selenium.By,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to be clickable
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="element">When this method returns, IWebElement containing the element if it is clickable, else null</param>
+            <returns>True if the element is clickable</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForClickable" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForClickableElementAndScrollIntoView(OpenQA.Selenium.By,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to be visible and scrolls into view
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="element">When this method returns, IWebElement containing the element if it is clickable, else null</param>
+            <returns>True if the element is clickable</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForAndScroll" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForClickableElementAndScrollIntoView(OpenQA.Selenium.By,System.Int32,System.Int32,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to be visible and scrolls into view
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="x">Horizontal offset</param>
+            <param name="y">Vertical offset</param>
+            <param name="element">When this method returns, IWebElement containing the element if it is clickable, else null</param>
+            <returns>True if the element is clickable</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForAndScroll" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForContainsText(OpenQA.Selenium.By,System.String,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to contain the expected (case insensitive) text
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The text we expect the element to contain - Case insensitive</param>
+            <param name="element">When this method returns, IWebElement containing the element if it is clickable, else null</param>
+            <returns>True if the element is contains the text</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForContainsText" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForElementExist(OpenQA.Selenium.By,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to exist
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="element">When this method returns, IWebElement containing the element if it exists, else null</param>
+            <returns>True if the element exists</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForExist" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForExactText(OpenQA.Selenium.By,System.String,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to have specific (case sensitive) text
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The text we expect the element to have - Case insensitive</param>
+            <param name="element">When this method returns, IWebElement containing the element if it has matching text, else null</param>
+            <returns>True if the element exists</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForExact" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.TryForVisibleElement(OpenQA.Selenium.By,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Attempts to wait for the element to be visible
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="element">When this method returns, IWebElement containing the element if it is visible, else null</param>
+            <returns>True if the element is clickable</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="TryWaitForVisible" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.AttributeContainsExpectedText(OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Wait until check where we are checking text is within the value of attribute given
+            </summary>
+            <param name="by">'by' selector for the element</param>     
+            <param name="textValue">String value that the elements attribute is expected to contain</param>
+            <param name="attribute">Attribute name as a String</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Element if the check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.AttributeEqualsExpectedText(OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a wait until check where we are checking text equals value of attribute given
+            </summary>
+            <param name="by">'by' selector for the element</param>     
+            <param name="textValue">String value that the element's attribute is expected to equal</param>
+            <param name="attribute">Attribute name as a String</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Element if the check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ElementIsClickable(OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Check if an element is clickable
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Success if the element is clickable</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ElementIsVisible(OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Check if an element is visible
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Success if the element is visible</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ElementDoesExist(OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Checks if the element exists
+            </summary>
+            <param name="by">Css Selector</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Success if the element exists</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ElementIsEnabled(OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Check if an element is enabled
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Success if the element is enabled</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ElementHasExpectedText(OpenQA.Selenium.By,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Check if an element has exactly the expected text - Case sensitive
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The expected text</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Success if the element has the expected text</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.ElementContainsExpectedText(OpenQA.Selenium.By,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Check if an element contains the expected text - Case insensitive
+            </summary>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">The expected text</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>Success if the element contains the expected text</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.DoWaitUntilCheck(System.Func{OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement}},OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a wait until check
+            </summary>
+            <param name="conditionCode">Function code to be executed by the block until successful or wait times out</param>
+            <param name="by">'by' selector for the element</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>True if the check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.DoWaitUntilCheck(System.Func{OpenQA.Selenium.By,System.String,OpenQA.Selenium.ISearchContext,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement}},OpenQA.Selenium.By,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a wait until check where we are checking text
+            </summary>
+            <param name="conditionCode">The wait until check function</param>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">Text string to pass to the function given</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>True if the check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.DoWaitUntilCheck(System.Func{OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.ISearchContext,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement}},OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a wait Until the element attributes to have the correct text value
+            </summary>
+            <param name="conditionCode">The wait until check function</param>
+            <param name="by">'by' selector for the element</param>
+            <param name="textOne">First text string expected for function</param>
+            <param name="textTwo">Second text string expected for function</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>True if check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.DoTryWaitUntilCheck(System.Func{OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement}},OpenQA.Selenium.By,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a try wait until check
+            </summary>
+            <param name="conditionCode">Function code to be executed by the block until successful or wait times out</param>
+            <param name="by">'by' selector for the element</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>True if the check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.DoTryWaitUntilCheck(System.Func{OpenQA.Selenium.By,System.String,OpenQA.Selenium.ISearchContext,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement}},OpenQA.Selenium.By,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a try wait until check where we are checking text
+            </summary>
+            <param name="conditionCode">The wait until check function</param>
+            <param name="by">'by' selector for the element</param>
+            <param name="text">Text string to pass to the function given</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>True if the check passed</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.Extensions.Wait.DoTryWaitUntilCheck(System.Func{OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.ISearchContext,System.Func{OpenQA.Selenium.IWebDriver,OpenQA.Selenium.IWebElement}},OpenQA.Selenium.By,System.String,System.String,OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Do a try wait Until the element attributes to have the correct text value
+            </summary>
+            <param name="conditionCode">The wait until check function</param>
+            <param name="by">'by' selector for the element</param>
+            <param name="textOne">First text string expected for function</param>
+            <param name="textTwo">Second text string expected for function</param>
+            <param name="searchContext">Search context  - either web driver or web element</param>
+            <returns>True if check passed</returns>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler">
+            <summary>
+            Contains functions for interacting with IWebElement objects
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.GetSelectedOptionFromDropdown(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By)">
+            <summary>
+            Get selected option from dropdown
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <returns>Text of the selected option in drop down</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SelectItemDropdown" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.GetSelectedOptionsFromDropdown(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By)">
+            <summary>
+            Get a list of the items selected in a drop down
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector</param>
+            <returns>List<string> of selected items in dropdown</string></returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SelectMultipleItems" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.GetElementAttribute(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.String)">
+            <summary>
+            Get the value of a specific attribute for an element
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="attribute">The attribute to get the value for</param>
+            <returns>The text in the textbox</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="GetAttribute" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.CheckCheckBox(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Boolean)">
+            <summary>
+            Check or Uncheck a checkbox NOTE: If checkbox is already in desired state, this method takes no action
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="check">True to check the checkbox. False to uncheck the checkbox</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="CheckCheckbox" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.CreateCommaDelimitedString(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Boolean)">
+            <summary>
+            Create a comma delimited string from a list of IWebElement objects
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the elements</param>
+            <param name="sort">True to create an alphabetically sorted comma delimited string</param>
+            <returns>Returns a comma delimited string</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SortFromWebElements" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.ClickButton(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Boolean)">
+            <summary>
+            Clicks an element
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="waitForButtonToDisappear">If True, wait for element to disappear. If False, Do not wait</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="ClickButton" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SelectMultipleElementsFromListBox(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Collections.Generic.List{System.String})">
+            <summary>
+            Select multiple items from a list box
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="elementsTextToSelect">List items as strings to select from list box</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SelectMultipleItems" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SelectMultipleElementsFromListBoxByValue(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Collections.Generic.List{System.String})">
+            <summary>
+            Select multiple items from a list box
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="values">List items as strings to select from list box</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SelectMultipleElementsByValue" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SelectDropDownOption(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.String)">
+            <summary>
+            Select an option from a drop down using displayed text
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="option">The option to select in drop down</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SelectItemDropdown" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SelectDropDownOptionByValue(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.String)">
+            <summary>
+            Select an option from a drop down using the value attribute
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="value">The value attribute for the option to select</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="DropdownByValue" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SetTextBox(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.String,System.Boolean)">
+            <summary>
+            Enter text into a textbox. NOTE: This function clears the textbox before entering text
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector for the element</param>
+            <param name="textToEnter">Text to enter into the textbox</param>
+            <param name="tabOff">True to press the Tab key after entering text</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="GetAttribute" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.ClickElementByJavaScript(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By)">
+            <summary>
+            Method to click an element via JavaScript
+            Used for scenarios where normal click can't reach, such as hidden or hover triggered elements.
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">The By element to use</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="ClickByJavascript" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.ScrollIntoView(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By)">
+            <summary>
+            JavaScript method to scroll an element into the view
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="ScrollIntoView" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.ScrollIntoView(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.Int32,System.Int32)">
+            <summary>
+            JavaScript method to scroll an element into the view
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By element</param>
+            <param name="x">Horizontal direction</param>
+            <param name="y">Vertical direction</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="ScrollIntoViewWithCoords" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.ExecuteScrolling(OpenQA.Selenium.ISearchContext,System.Int32,System.Int32)">
+            <summary>
+            JavaScript method to scroll an element into the view
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="x">Horizontal direction</param>
+            <param name="y">Vertical direction</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="ExecuteScrolling" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SlowType(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.String)">
+            <summary>
+            Method to slowly type a string
+            Used for scenarios where normal SendKeys types too quickly and causes issues with a website
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector</param>
+            <param name="textToEnter">The string being entered into the text input field</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SlowType" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.ElementHandler.SendSecretKeys(OpenQA.Selenium.ISearchContext,OpenQA.Selenium.By,System.String,Magenic.MaqsFramework.Utilities.Logging.Logger)">
+            <summary>
+            Method used to send secret keys without logging
+            </summary>
+            <param name="searchContext">Web driver or element</param>
+            <param name="by">By selector</param>
+            <param name="textToEnter">The string being entered into the text input field</param>
+            <param name="logger">The Logging object</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/ElementHandlerUnitTests.cs" region="SendSecretKeys" lang="C#" />
+            </example>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumTestObject">
+            <summary>
+            Selenium test context data
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumTestObject.#ctor(OpenQA.Selenium.IWebDriver,Magenic.MaqsFramework.Utilities.Logging.Logger,Magenic.MaqsFramework.BaseTest.SoftAssert,Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumTestObject" /> class
+            </summary>
+            <param name="webDriver">The test's Selenium web driver</param>
+            <param name="logger">The test's logger</param>
+            <param name="softAssert">The test's soft assert</param>
+            <param name="perfTimerCollection">The test's performance timer collection</param>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumTestObject.WebDriver">
+            <summary>
+            Gets the web driver
+            </summary>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert">
+            <summary>
+            Soft Assert override for selenium tests
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert.webDriver">
+            <summary>
+            WebDriver to be used
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert.#ctor(OpenQA.Selenium.IWebDriver,Magenic.MaqsFramework.Utilities.Logging.Logger)">
+            <summary>
+            Initializes a new instance of the SeleniumSoftAssert class
+            </summary>
+            <param name="webDriver">The webdriver to use</param>
+            <param name="logger">The logger to use</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert.AreEqual(System.String,System.String,System.String)">
+            <summary>
+            Soft assert method to check if the files are equal
+            </summary>
+            <param name="expectedText">Expected text</param>
+            <param name="actualText">Actual text</param>
+            <param name="message">Exception message if desired</param>
+            <returns>Boolean if the assert is true</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert.AreEqual(System.String,System.String,System.String,System.String)">
+            <summary>
+            Soft assert method to check if the strings are equal
+            </summary>
+            <param name="expectedText">Expected text</param>
+            <param name="actualText">Actual text</param>
+            <param name="softAssertName">Soft assert name to use</param>
+            <param name="message">Exception message if desired</param>
+            <returns>Boolean if the assert is true</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="SoftAssertAreEqual" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert.IsFalse(System.Boolean,System.String,System.String)">
+            <summary>
+            Soft assert method to check if the boolean is false
+            </summary>
+            <param name="condition">Boolean condition</param>
+            <param name="softAssertName">Soft assert name</param>
+            <param name="failureMessage">Failure message</param>
+            <returns>Boolean of the assert</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="SoftAssertIsFalse" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumSoftAssert.IsTrue(System.Boolean,System.String,System.String)">
+            <summary>
+            Soft assert method to check if the boolean is false
+            </summary>
+            <param name="condition">Boolean condition</param>
+            <param name="softAssertName">Soft assert name</param>
+            <param name="failureMessage">Failure message</param>
+            <returns>Boolean of the assert</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="SoftAssertIsTrue" lang="C#" />
+            </example>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities">
+            <summary>
+            Static class for the selenium utilities
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities.CaptureScreenshot(OpenQA.Selenium.IWebDriver,Magenic.MaqsFramework.Utilities.Logging.Logger,System.String)">
+            <summary>
+            To capture a screenshot during execution
+            </summary>
+            <param name="webDriver">The WebDriver</param>
+            <param name="log">The logger being used</param>
+            <param name="appendName">Appends a name to the end of a filename</param>
+            <returns>Boolean if the save of the image was successful</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumUnitTest.cs" region="CaptureScreenshot" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities.CaptureScreenshot(OpenQA.Selenium.IWebDriver,System.String,System.String,OpenQA.Selenium.ScreenshotImageFormat)">
+            <summary>
+            To capture a screenshot during execution
+            </summary>
+            <param name="webDriver">The WebDriver</param>
+            <param name="directory">The directory file path</param>
+            <param name="fileNameWithoutExtension">Filename without extension</param>
+            <param name="imageFormat">Optional Screenshot Image format parameter; Default imageFormat is PNG</param>
+            <returns>Path to the log file</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities.SearchContextToJavaScriptExecutor(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Get the javaScript executor from a web element or web driver
+            </summary>
+            <param name="searchContext">The search context</param>
+            <returns>The javaScript executor</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities.SearchContextToWebDriver(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Get the web driver from a web element or web driver
+            </summary>
+            <param name="searchContext">The search context</param>
+            <returns>The web driver</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities.WebElementToWebDriver(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Get the web driver from a web element
+            </summary>
+            <param name="element">The web element</param>
+            <returns>The web driver</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumUtilities.GetScreenShotFormat(System.String)">
+            <summary>
+            Gets the Screenshot Format to save images
+            </summary>
+            <returns>Desired ImageFormat Type</returns>
+            <param name="imageFormat">Image Format Screen format screen</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig">
+            <summary>
+            Config class
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.remoteCapabilities">
+            <summary>
+            Static field for RemoteSeleniumCapsMaqs configuration section.
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.Browser">
+            <summary>
+            Get the browser
+            <para>If no browser is provide in the project configuration file we default to Chrome</para>
+            <para>Browser are maximized by default</para>
+            </summary>
+            <returns>The web driver</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="GetBrowser" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.Browser(System.String)">
+            <summary>
+            Get the webdriver based for the provided browser
+            <para>Browser are maximized by default</para>
+            </summary>
+            <param name="browser">The browser type we want to use</param>
+            <returns>An IWebDriver</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="GetBrowserWithString" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetBrowserName">
+            <summary>
+            Get the browser type name - Example: Chrome
+            </summary>
+            <returns>The browser type</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="GetBrowserName" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetDriverHintPath">
+            <summary>
+            Get the hint path for the web driver
+            </summary>
+            <returns>The hint path for the web driver</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="GetDriverHintPath" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetRemoteBrowserName">
+            <summary>
+            Get the remote browser type name
+            </summary>
+            <returns>The browser type being used on grid</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="GetRemoteName" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetRemoteBrowserVersion">
+            <summary>
+            Get the remote browser version
+            </summary>
+            <returns>The browser version to run against on grid</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="RemoteVersion" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetRemotePlatform">
+            <summary>
+            Get the remote platform type name
+            </summary>
+            <returns>The platform (or OS) to run remote tests against</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="RemotePlatform" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetWaitDriver(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Get the wait default wait driver
+            </summary>
+            <param name="driver">Brings in an IWebDriver</param>
+            <returns>An WebDriverWait</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="WaitDriver" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetWebSiteBase">
+            <summary>
+            Get the web site base url
+            </summary>
+            <returns>The web site base url</returns>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="GetWebsiteBase" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.SetTimeouts(OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Set the script and page timeouts
+            </summary>
+            <param name="driver">Brings in an IWebDriver</param>
+            <example>
+            <code source = "../SeleniumUnitTesting/SeleniumConfigTests.cs" region="SetTimeouts" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetDriverLocation(System.String,System.String,System.Boolean)">
+            <summary>
+            Get the web driver location
+            </summary>
+            <param name="driverFile">The web drive file, including extension</param>
+            <param name="defaultHintPath">The default location for the specific driver</param>
+            <param name="mustExist">Do we need to know where this drive is located, if this is true and the file is not found an error will be thrown</param>
+            <returns>The path to the web driver</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetProgramFilesFolder(System.String,System.String)">
+            <summary>
+            Get the programs file folder which contains given file
+            </summary>
+            <param name="folderName">The programs file sub folder</param>
+            <param name="file">The file we are looking for</param>
+            <returns>The parent folder of the given file or the empty string if the file is not found</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetRemoteCapabilities">
+            <summary>
+            Get the remote desired capability
+            </summary>
+            <returns>The remote desired capability</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.SetRemoteCapabilities(OpenQA.Selenium.Remote.DesiredCapabilities)">
+            <summary>
+            Reads the RemoteSeleniumCapsMaqs section and appends to the DesiredCapabilities
+            </summary>
+            <param name="dc">The Desired Capabilities to make this an extension method</param>
+            <returns>The altered <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> Desired Capabilities</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetTimeoutTime">
+            <summary>
+            Get the timeout timespan
+            </summary>
+            <returns>The timeout time span</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseSeleniumTest.SeleniumConfig.GetWaitTime">
+            <summary>
+            Get the wait timespan
+            </summary>
+            <returns>The wait time span</returns>
+        </member>
+    </members>
+</doc>
