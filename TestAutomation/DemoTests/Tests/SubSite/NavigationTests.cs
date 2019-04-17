@@ -35,8 +35,8 @@ namespace Tests.SubSite
             //string userName = TestContext.DataRow["UserName"].ToString();
             //string password = TestContext.DataRow["Password"].ToString();
 
-            string userName = "zed";
-            string password = "fred";
+            string userName = "ded";
+            string password = "hed";
 
             LoginPage login = new LoginPage(this.TestObject);
             login.OpenLoginPage();

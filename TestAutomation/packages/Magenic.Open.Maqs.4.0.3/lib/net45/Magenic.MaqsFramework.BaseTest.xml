@@ -1,0 +1,542 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Magenic.MaqsFramework.BaseTest</name>
+    </assembly>
+    <members>
+        <member name="T:Magenic.MaqsFramework.BaseTest.BaseTest">
+            <summary>
+            Base for tests without a defined system under test
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseTest.BaseTest.testContextInstance">
+            <summary>
+            The Visual Studio TestContext
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseTest.BaseTest" /> class
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.PerfTimerCollection">
+            <summary>
+            Gets or sets the performance timer collection for a test 
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.SoftAssert">
+            <summary>
+            Gets or sets the SoftAssert objects
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.Log">
+            <summary>
+            Gets or sets the testing object
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.LoggedExceptionList">
+            <summary>
+            Gets or sets the testing object
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.TestContext">
+            <summary>
+            Gets or sets the Visual Studio TextContext
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.BaseTestObjects">
+            <summary>
+            Gets or sets the BaseContext objects
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.TestObject">
+            <summary>
+            Gets or sets the test object 
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.LoggingEnabledSetting">
+            <summary>
+            Gets the logging enable flag
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.PerfTimerCollectionSet">
+            <summary>
+            Gets or sets the Dictionary of performance timer collections (for multi-threaded test execution)
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.Loggers">
+            <summary>
+            Gets or sets the logging objects
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.LoggedExceptions">
+            <summary>
+            Gets or sets the logged exceptions
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTest.SoftAsserts">
+            <summary>
+            Gets or sets the soft assert objects
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.Setup">
+            <summary>
+            Setup before a test
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.Teardown">
+            <summary>
+            Tear down after a test
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetSoftAssert">
+            <summary>
+            Method to get a new soft assert object
+            </summary>
+            <returns>A soft assert object</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.SetupLogging">
+            <summary>
+            Setup logging data
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetFullyQualifiedTestClassName">
+            <summary>
+            Get the fully qualified test name
+            </summary>
+            <returns>The test name including class</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetResultType">
+            <summary>
+            Get the type of test result
+            </summary>
+            <returns>The test result type</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetResultText">
+            <summary>
+            Get the test result type as text
+            </summary>
+            <returns>The result type as text</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.TryToLog(Magenic.MaqsFramework.Utilities.Logging.MessageType,System.String,System.Object[])">
+            <summary>
+            Try to log a message - Do not fail if the message is not logged
+            </summary>
+            <param name="messageType">The type of message</param>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.LogVerbose(System.String,System.Object[])">
+            <summary>
+            Log a verbose message and include the automation specific call stack data
+            </summary>
+            <param name="message">The message text</param>
+            <param name="args">String format arguments</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.CreateNewTestObject">
+            <summary>
+            Create a Selenium test object
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetFullyQualifiedTestClassNameVS">
+            <summary>
+            Get the fully qualified test name
+            </summary>
+            <returns>The test name including class</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.FirstChanceHandler(System.Object,System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs)">
+            <summary>
+            Listen for any thrown exceptions
+            </summary>
+            <param name="source">Source object</param>
+            <param name="e">The first chance exception</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.DoesLoggerExist">
+            <summary>
+            Does a logger exist for the test type
+            </summary>
+            <returns>True if a logger exists</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetResultTypeVS">
+            <summary>
+            Get the type of test result
+            </summary>
+            <returns>The test result type</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetResultTextVS">
+            <summary>
+            Get the test result type as text
+            </summary>
+            <returns>The result type as text</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetFullyQualifiedTestClassNameNunit">
+            <summary>
+            Get the fully qualified test name
+            </summary>
+            <returns>The test name including class</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetResultTypeNunit">
+            <summary>
+            Get the type of test result
+            </summary>
+            <returns>The test result type</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.GetResultTextNunit">
+            <summary>
+            Get the test result type as text
+            </summary>
+            <returns>The result type as text</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.UpdateConfigParameters">
+            <summary>
+            Update config settings with override parameters
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTest.AttachLogAndSceenshot(System.String)">
+            <summary>
+            For VS unit tests attach the log and screen shot if they exist
+            </summary>
+            <param name="fullyQualifiedTestName">The fully qualified test name</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2">
+            <summary>
+            Base code for test classes that setup test objects like web drivers or database connections
+            </summary>
+            <typeparam name="T">Type of object under test, such as web driver and web service wrapper</typeparam>
+            <typeparam name="U">Test object type</typeparam>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2" /> class
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.ObjectUnderTest">
+            <summary>
+            Gets or sets the object under test
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.TestObject">
+            <summary>
+            Gets or sets the test object 
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.ObjectsUnderTest">
+            <summary>
+            Gets or sets the testing object - Selenium driver, web client, database connection, etc.
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.IsObjectUnderTestStored">
+            <summary>
+            Check if the test object is stored
+            </summary>
+            <returns>True if the test object is stored</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.Setup">
+            <summary>
+            Setup before a test
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.Teardown">
+            <summary>
+            Tear down after a test
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.SetupEventFiringTester">
+            <summary>
+            Setup event firing test object 
+            </summary>
+            <example>  
+            This sample shows what an overload for the <see cref="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.SetupEventFiringTester"/> method may look like
+            <code> 
+            protected override void SetupEventFiringTester()
+            {
+               this.WebDriver = this.GetBrowser();
+               this.WebDriver = new EventFiringWebDriver(this.WebDriver);
+               this.MapEvents((EventFiringWebDriver)this.WebDriver);
+            }
+            </code> 
+            </example> 
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.SetupNoneEventFiringTester">
+            <summary>
+            Setup none event firing test object 
+            </summary>
+            <example>  
+            This sample shows what an overload for the <see cref="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.SetupNoneEventFiringTester"/> method may look like
+            <code> 
+            protected override void SetupNoneEventFiringTester()
+            {
+               this.WebDriver = this.GetBrowser();
+            }
+            </code> 
+            </example> 
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.CreateNewTestObject">
+            <summary>
+            Create a test object
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.PostSetupLogging">
+            <summary>
+            Overload function for doing post setup logging
+            </summary>
+            <remarks> 
+            If not override no post setup logging will be done 
+            </remarks> 
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseExtendableTest`2.BeforeLoggingTeardown(Magenic.MaqsFramework.Utilities.Logging.TestResultType)">
+            <summary>
+            Steps to do before logging teardown results - If not override nothing is done before logging the results
+            </summary>
+            <param name="resultType">The test result</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseTest.BaseTestObject">
+            <summary>
+            Base test context data
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTestObject.#ctor(Magenic.MaqsFramework.Utilities.Logging.Logger,Magenic.MaqsFramework.BaseTest.SoftAssert,Magenic.MaqsFramework.Utilities.Performance.PerfTimerCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseTest.BaseTestObject" /> class
+            </summary>
+            <param name="logger">The test's logger</param>
+            <param name="softAssert">The test's soft assert</param>
+            <param name="perfTimerCollection">The test's performance timer collection</param>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTestObject.Log">
+            <summary>
+            Gets the logger
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTestObject.PerfTimerCollection">
+            <summary>
+            Gets the performance timer collection
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTestObject.SoftAssert">
+            <summary>
+            Gets soft assert
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTestObject.Values">
+            <summary>
+            Gets a dictionary of string key value pairs
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.BaseTestObject.Objects">
+            <summary>
+            Gets a dictionary of string key and object value pairs
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTestObject.SetValue(System.String,System.String)">
+            <summary>
+            Sets a string value, will replace if the key already exists
+            </summary>
+            <param name="key">The key</param>
+            <param name="value">The value to associate with the key</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.BaseTestObject.SetObject(System.String,System.Object)">
+            <summary>
+            Sets an object value, will replace if the key already exists
+            </summary>
+            <param name="key">The key</param>
+            <param name="value">The value to associate with the key</param>
+        </member>
+        <member name="T:Magenic.MaqsFramework.BaseTest.SoftAssert">
+            <summary>
+            SoftAssert class
+            </summary>
+            <example>
+            <code source="../SeleniumUnitTesting/SeleniumUnitTest.cs" region="SoftAssertAreEqual" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertIsTrue" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertIsFalse" lang="C#" />
+            </example>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseTest.SoftAssert.didUserCheckForFailures">
+            <summary>
+            Boolean if the user checked for failures
+            </summary>
+        </member>
+        <member name="F:Magenic.MaqsFramework.BaseTest.SoftAssert.listOfExceptions">
+            <summary>
+            List of all asserted exceptions 
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.#ctor(Magenic.MaqsFramework.Utilities.Logging.Logger)">
+            <summary>
+            Initializes a new instance of the SoftAssert class.
+            Setup the Logger
+            </summary>
+            <param name="logger">Logger to be used</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Magenic.MaqsFramework.BaseTest.SoftAssert"/> class
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.SoftAssert.NumberOfAsserts">
+            <summary>
+            Gets a count of total number of Asserts
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.SoftAssert.NumberOfPassedAsserts">
+            <summary>
+            Gets a count of total number of Passed Asserts
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.SoftAssert.NumberOfFailedAsserts">
+            <summary>
+            Gets a count of total number of Failed Asserts
+            </summary>
+        </member>
+        <member name="P:Magenic.MaqsFramework.BaseTest.SoftAssert.Log">
+            <summary>
+            Gets the logger being used
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.DidUserCheck">
+            <summary>
+            Gets a value indicating whether the boolean if the user checks for failures at the end of the test.
+            </summary>
+            <returns>If the user checked for failures.  If the number of asserts is 0, it returns true.</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertChecked" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.DidSoftAssertsFail">
+            <summary>
+            Check if there are any failed soft asserts.
+            </summary>
+            <returns>True if there are failed soft asserts</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertDidFail" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.AreEqual(System.String,System.String,System.String)">
+            <summary>
+            Asserts if two strings are equal
+            </summary>
+            <param name="expectedText">Expected value of the string </param>
+            <param name="actualText">Actual value of the string</param>
+            <param name="message">Message to be used when logging</param>
+            <returns>Boolean if they are equal</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertAreEqualPasses" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertAreEqualFails" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.AreEqual(System.String,System.String,System.String,System.String)">
+            <summary>
+            Asserts if two strings are equal
+            </summary>
+            <param name="expectedText">Expected value of the string </param>
+            <param name="actualText">Actual value of the string</param>
+            <param name="softAssertName">Soft assert name</param>
+            <param name="message">Message to be used when logging</param>
+            <returns>Boolean if they are equal</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertAreEqualPasses" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertAreEqualFails" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.IsTrue(System.Boolean,System.String,System.String)">
+            <summary>
+            Soft assert for IsTrue
+            </summary>
+            <param name="condition">Boolean condition</param>
+            <param name="softAssertName">Soft assert name</param>
+            <param name="failureMessage">Failure message</param>
+            <returns>Boolean if condition is met</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertIsTrue" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.IsFalse(System.Boolean,System.String,System.String)">
+            <summary>
+            Soft assert for IsFalse
+            </summary>
+            <param name="condition">Boolean condition</param>
+            <param name="softAssertName">Soft assert name</param>
+            <param name="failureMessage">Failure message</param>
+            <returns>Boolean if condition is met</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertIsFalse" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.LogFinalAssertData">
+            <summary>
+            Log final assert count summary
+            </summary>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.FailTestIfAssertFailed">
+            <summary>
+            Fail test if there were one or more failures
+            </summary>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="VSAssertFail" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="NUnitAssertFail" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.FailTestIfAssertFailed(System.String)">
+            <summary>
+            Fail test if there were one or more failures
+            </summary>
+            <param name="message">Customer error message</param>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.Assert(System.Action)">
+            <summary>
+            Wrap an assert inside a soft assert
+            </summary>
+            <param name="assertFunction">The assert function</param>
+            <returns>True if the asset passed</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="VSAssert" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="NUnitAssert" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="VSAssertFail" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="NUnitAssertFail" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.AssertFails(System.Action,System.Type,System.String,System.String)">
+            <summary>
+            Wrap an assert that is expected to fail and the expected failure 
+            </summary>
+            <param name="assertFunction">The assert function</param>
+            <param name="expectedException">The type of expected exception</param>
+            <param name="assertName">soft assert name</param>
+            <param name="failureMessage">Failure message</param>
+            <returns>True if the assert failed</returns>
+            <example>
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertFailsPasses" lang="C#" />
+            <code source="../UtilitiesUnitTests/SoftAssertUnitTests.cs" region="SoftAssertFailsFails" lang="C#" />
+            </example>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.InvokeTest(System.Action,System.String,System.String,System.String)">
+            <summary>
+            Executes the assert type passed as parameter and updates the total assert count
+            </summary>
+            <param name="test">Test method Action </param>
+            <param name="expectedText">Expected value of the string </param>
+            <param name="actualText">Actual value of the string</param>
+            <param name="message">Test Name or Message</param>
+            <returns>Boolean if the assert is true</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.InvokeTest(System.Action,System.String,System.String)">
+            <summary>
+            Executes the assert type passed as parameter and updates the total assert count
+            </summary>
+            <param name="test">Test method Action </param>
+            <param name="softAssertName">Soft assert name</param>
+            <param name="message">Test Name or Message</param>
+            <returns>Boolean if the assert is true</returns>
+        </member>
+        <member name="M:Magenic.MaqsFramework.BaseTest.SoftAssert.LogMessage(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Logs the message to the logger
+            </summary>
+            <param name="expectedText">Expected value of the string </param>
+            <param name="actualText">Actual value of the string</param>
+            <param name="message">Test Name or Message</param>
+            <param name="result">Decides the message type to be logged</param>
+        </member>
+    </members>
+</doc>
